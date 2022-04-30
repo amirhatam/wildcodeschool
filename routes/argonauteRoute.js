@@ -1,9 +1,9 @@
 const express = require("express")
 const router = express.Router()
-const { getArgonaute } = require("../controllers/authController")
+const { getArgonaute } = require("../controllers/argonauteController")
 
 
-router.get("/argonaute", getArgonaute)
+router.get("/", getArgonaute)
 
 
 router.all("*", (req, res) => {

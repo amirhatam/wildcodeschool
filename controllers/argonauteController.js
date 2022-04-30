@@ -3,10 +3,10 @@ const argonauteModel = require("../model/argonaute")
 
 const getArgonaute = async (req, res) => {
     try {
-        const users = await argonauteModel.find()
+        const argonautes = await argonauteModel.find()
 
-        console.log("users", users);
-        res.json(users)
+        console.log("argonautes", argonautes);
+        res.json(argonautes)
 
     } catch (err) {
         console.log(err)

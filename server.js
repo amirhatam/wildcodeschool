@@ -2,6 +2,9 @@ const express = require("express")
 const mongoose = require("mongoose")
 const router = express.Router()
 
+const argonauteRoutes = require("./routes/argonauteRoute")
+
+
 mongoose.connect('mongodb://localhost:27017/wildcodeschool', { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
     if (err) {
         console.error(err);
@@ -16,6 +19,7 @@ const app = express()
 app.use(express.json())
 
 app.use("/", router)
+app.use("/argonaute", argonauteRoutes)
 
 
 app.listen(port, () => {
