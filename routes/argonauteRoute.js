@@ -1,9 +1,10 @@
 const express = require("express")
 const router = express.Router()
-const { getArgonaute } = require("../controllers/argonauteController")
+const { getArgonaute, addArgonaute } = require("../controllers/argonauteController")
 
 
 router.get("/", getArgonaute)
+router.post("/add", addArgonaute)
 
 
 router.all("*", (req, res) => {

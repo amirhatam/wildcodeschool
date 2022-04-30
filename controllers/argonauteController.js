@@ -15,6 +15,19 @@ const getArgonaute = async (req, res) => {
     }
 }
 
+const addArgonaute = async (req, res) => {
+    try {
+        const newArgonaute = req.body
+
+        const addArgonaute = await argonauteModel.create(newArgonaute)
+
+        res.json({ message: "Argonaute was created!", addArgonaute })
+    } catch (error) {
+        console.log("Error: ", error)
+        res.status(500).json({ message: "There was an error while treating the request" })
+    }
+}
 
 
-module.exports = { getArgonaute }
+
+module.exports = { getArgonaute, addArgonaute }
