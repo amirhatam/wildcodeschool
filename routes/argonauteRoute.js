@@ -1,10 +1,11 @@
 const express = require("express")
 const router = express.Router()
-const { getArgonaute, addArgonaute } = require("../controllers/argonauteController")
+const { getArgonaute, addArgonaute, deleteArgonaute } = require("../controllers/argonauteController")
 
 
 router.get("/", getArgonaute)
 router.post("/add", addArgonaute)
+router.delete("/:id/delete-argonaute", deleteArgonaute)
 
 
 router.all("*", (req, res) => {

@@ -28,6 +28,17 @@ const addArgonaute = async (req, res) => {
     }
 }
 
+const deleteArgonaute = async (req, res) => {
+    try {
+        const IdArgonaute = req.params.id
+        const argonauteDelete = await argonauteModel.deleteOne({ _id: IdArgonaute })
 
+        console.log("delete Argonaute", argonauteDelete)
+        res.json({ message: "Argonaute was deleted", argonauteDelete })
+    } catch (error) {
+        console.log("Error", error)
+        res.status(500).json({ message: "There was a problem :(" })
+    }
+}
 
-module.exports = { getArgonaute, addArgonaute }
+module.exports = { getArgonaute, addArgonaute, deleteArgonaute }
